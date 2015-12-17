@@ -3,7 +3,7 @@ import {Observable} from '../Observable';
 
 export class ErrorObservable<T> extends Observable<T> {
 
-  static create<T>(error: T, scheduler?: Scheduler) {
+  static create<T>(error: any, scheduler?: Scheduler) {
     return new ErrorObservable(error, scheduler);
   }
 
@@ -11,7 +11,7 @@ export class ErrorObservable<T> extends Observable<T> {
     subscriber.error(error);
   }
 
-  constructor(public error: T, private scheduler?: Scheduler) {
+  constructor(public error: any, private scheduler?: Scheduler) {
     super();
   }
 
